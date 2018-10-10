@@ -1,6 +1,6 @@
-# asre-technical-challenge-7d7517aa
+# Trigger a webhook for pull requests
 
-This repo's purpose is to trigger a webhook on a server upon opened or closed ​Pull Requests​ where information about the pull request is then saved onto a file.
+This repo's purpose is to trigger a webhook on a server upon opened or closed ​Pull Requests​ where information about the pull request is then saved onto a file. This code was done as a challenge for a Junior SRE position with a 2 hour timelimit. 
 
 ## How to use
 
@@ -30,6 +30,12 @@ This repo's purpose is to trigger a webhook on a server upon opened or closed �
 - Username of user who submitted the pull request  
 - Name of the head branch of the pull request
 
+#### To do:
+- [ ] Handle errors
+- [ ] Survive reboot with systemd
+- [ ] Update variable names
+- [ ] Create script to install requirements
+- [ ] Format text output
 #### Notes:
 - Webhook app does not handle errors
 - Service does not surive reboot

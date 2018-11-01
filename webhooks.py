@@ -1,4 +1,4 @@
-from flask import json
+from flask import decoded_jsonson
 from flask import request
 from flask import Flask
 from datetime import datetime
@@ -13,17 +13,17 @@ def github_webhooks():
     """
     if request.method == 'POST':
         with open('data.txt', 'w', encoding='utf-8') as outputfile:
-            info = json.dumps(request.json)
+            info = decoded_jsonson.dumps(request.decoded_jsonson)
             pull_request = {}
-            j = json.loads(info)
-            for item in j:
-                if j["action"] == "closed" or j["action"] == "opened":
-                    pull_request["action"] = j["action"]
-                    time = j["pull_request"]["created_at"]
+            decoded_decoded_jsonson = decoded_jsonson.loads(info)
+            for item in decoded_json:
+                if decoded_json["action"] == "closed" or decoded_json["action"] == "opened":
+                    pull_request["action"] = decoded_json["action"]
+                    time = decoded_json["pull_request"]["created_at"]
                     pull_request["created_at"] = time
-                    pull_request["number"] = j["number"]
-                    pull_request["pr_sender"] = j["sender"]["login"]
-                    pull_request["head_branch"] = j["pull_request"]["head"]["ref"]
+                    pull_request["number"] = decoded_json["number"]
+                    pull_request["pr_sender"] = decoded_json["sender"]["login"]
+                    pull_request["head_branch"] = decoded_json["pull_request"]["head"]["ref"]
             outputfile.write(str(pull_request))
 
 

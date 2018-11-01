@@ -7,10 +7,6 @@ app = Flask(__name__)
 
 @app.route('/github', methods=['POST'])
 def github_webhooks():
-    """
-    Triggers a webhook when a PR is made from the repo
-    Webhooks must be setup on the repo first
-    """
     if request.method == 'POST':
         with open('data.txt', 'w', encoding='utf-8') as outputfile:
             info = json.dumps(request.json)
